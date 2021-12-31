@@ -12,7 +12,7 @@ class MergeSorter < BaseSorter
         return @small_sorter.sort(ary, count) if count < 10
 
         mid_idx = count / 2
-        x, y = ary[0..mid_idx], ary[mid_idx..-1]
+        x, y = ary[0...mid_idx], ary[mid_idx..-1]
         x_idx, y_idx, x_cnt, y_cnt = 0, 0, x.size, y.size
         self.sort(x, x_cnt)
         self.sort(y, y_cnt)
