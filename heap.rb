@@ -125,8 +125,8 @@ class Heap
         # arbitrary but requires no extra processing time other than
         # what it takes to let it settle into its new position
         taken = @storage[ROOT_INDEX]
-        @size -= 1
         @storage[ROOT_INDEX] = @storage[@size]
+        @size -= 1
         HeapNode.new(self, ROOT_INDEX).heapify_down if @size > 1
         taken
     end
